@@ -1,0 +1,55 @@
+# Основные зависимости для logging_system
+# Python 3.8+
+
+# Веб-фреймворки (опционально, в зависимости от использования)
+fastapi>=0.104.0
+flask>=3.0.0
+uvicorn>=0.24.0  # для FastAPI
+
+# Работа с датами и временем
+python-dateutil>=2.8.2
+
+# Для работы с JSON и данными
+pydantic>=2.0.0  # для валидации в FastAPI
+
+# Prometheus клиент для метрик
+prometheus-client>=0.19.0
+
+# Опционально: для интеграции с различными системами
+# Раскомментируйте, если нужно
+
+# Для отправки в Graylog
+# pygelf>=0.4.2
+
+# Для работы с Redis (если используется для очереди)
+# redis>=5.0.0
+
+# Для работы с PostgreSQL
+# psycopg2-binary>=2.9.9
+# sqlalchemy>=2.0.23
+
+# Для работы с MySQL
+# pymysql>=1.1.0
+
+# Для Email уведомлений
+# aiosmtplib>=3.0.1  # async SMTP
+# python-multipart>=0.0.6
+
+# Для Telegram уведомлений  
+# python-telegram-bot>=20.7
+
+# Для тестирования (development)
+pytest>=7.4.3
+pytest-asyncio>=0.21.1
+pytest-cov>=4.1.0
+pytest-mock>=3.12.0
+
+# Для линтинга и форматирования (development)
+black>=23.12.0
+flake8>=6.1.0
+mypy>=1.7.1
+pylint>=3.0.3
+
+# Дополнительные утилиты
+python-json-logger>=2.0.7  # альтернативный JSON formatter
+colorama>=0.4.6  # цветной вывод в консоль (для development)
