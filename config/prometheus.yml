@@ -1,0 +1,43 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'fraud-detection'
+    environment: 'production'
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+
+# Правила для алертов
+rule_files:
+  - 'alerts.yml'
+
+scrape_configs:
+  # Метрики приложения
+  - job_name: 'fraud-detection-app'
+    static_configs:
+      - targets: ['fraud-detection-app:9090']
+        labels:
+          service: 'fraud-detection'
+          component: 'app'
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # Метрики Prometheus
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Метрики Grafana
+  - job_name: 'grafana'
+    static_configs:
+      - targets: ['grafana:3000']
+
+  # Метрики Graylog
+  - job_name: 'graylog'
+    static_configs:
+      - targets: ['graylog:9000']
+
