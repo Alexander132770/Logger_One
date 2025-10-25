@@ -1,0 +1,6 @@
+metrics:
+  port: 9100
+  enable_cpu: true
+  enable_memory: true
+  enable_requests: true
+  backup_path: "metrics/backup.json"
